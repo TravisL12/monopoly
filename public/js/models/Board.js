@@ -1,19 +1,22 @@
+var titleCase = function (name) {
+    return name.slice(0,1).toUpperCase() + name.slice(1,name.length);
+}
+
 var Board = function () {
     this.tiles = tileData.map(function (tile) {
-        return new Tile(tile);
+        var type = titleCase(tile.type);
+        return new window[type](tile);
     });
 }
 
 Board.prototype = {
     render: function (element) {
         var ulElement = document.createElement('ul');
-        ulElement.classList.add('tile-container');
+        ulElement.className = 'tile-container';
+
         this.tiles.forEach(function (tile) {
             var listEl = document.createElement('li');
-            listEl.classList.add('tile');
-            if (tile.type) {
-                listEl.classList.add(tile.type);
-            }
+            listEl.className = 'tile ' + tile.type;
             listEl.innerText = tile.name;
             ulElement.appendChild(listEl);
         });

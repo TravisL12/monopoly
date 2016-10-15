@@ -8,7 +8,9 @@ li {
 .monopoly-container .tile-container .tile {
   float: left;
   border: 1px solid;
-  width: 80px;
-  height: 100px; }
+  height: 100px;
+  width: 80px; }
+  .monopoly-container .tile-container .tile.corner {
+    width: 100px; }
 
 /*# sourceMappingURL=application.css.map */
