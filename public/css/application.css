@@ -1,31 +1,4 @@
 body {
-  font-family: Helvetica;
-}
+  color: red; }
 
-h1 {
-  text-align: center;
-}
-
-.names-container,
-.images-container {
-  width: 1200px;
-  margin: 20px auto;
-  padding: 50px;
-}
-
-.names-container {
-  border: 1px solid red;
-}
-
-.display-name .name {
-  display: inline-block;
-  min-width: 200px;
-}
-.long-name {
-  color: red;
-  font-weight: bold;
-}
-
-.images-container {
-  border: 3px dotted blue;
-}
+/*# sourceMappingURL=application.css.map */
