@@ -5,23 +5,58 @@ ul {
 li {
   list-style: none; }
 
-.monopoly-container .tile-container .tile {
-  float: left;
+.monopoly-container .game-board-container {
+  height: 900px;
+  width: 900px;
   border: 1px solid;
-  height: 100px;
-  width: 80px; }
-  .monopoly-container .tile-container .tile.corner {
+  position: relative; }
+  .monopoly-container .game-board-container .tile {
+    float: left;
+    height: 100px;
+    width: 77.77778px; }
+  .monopoly-container .game-board-container .tile.corner {
+    position: absolute;
+    height: 100px;
     width: 100px;
     background: red; }
-  .monopoly-container .tile-container .tile.property .property-title {
+  .monopoly-container .game-board-container #go.tile.corner {
+    bottom: 0;
+    left: 0; }
+  .monopoly-container .game-board-container #jail.tile.corner {
+    top: 0;
+    left: 0; }
+  .monopoly-container .game-board-container #parking.tile.corner {
+    top: 0;
+    right: 0; }
+  .monopoly-container .game-board-container #go-to-jail.tile.corner {
+    bottom: 0;
+    right: 0; }
+  .monopoly-container .game-board-container .tile.property .property-title {
     background: lightblue; }
-  .monopoly-container .tile-container .tile.community {
+  .monopoly-container .game-board-container .tile.community {
     background: gold; }
-  .monopoly-container .tile-container .tile.tax {
+  .monopoly-container .game-board-container .tile.tax {
     background: purple; }
-  .monopoly-container .tile-container .tile.utility {
+  .monopoly-container .game-board-container .tile.utility {
     background: gray; }
-  .monopoly-container .tile-container .tile.chance {
+  .monopoly-container .game-board-container .tile.chance {
     background: lime; }
+  .monopoly-container .game-board-container .side {
+    position: absolute; }
+  .monopoly-container .game-board-container #side-0.side {
+    left: -300px;
+    bottom: 400px;
+    transform: rotateZ(90deg); }
+  .monopoly-container .game-board-container #side-1.side {
+    top: 0;
+    left: 100px;
+    transform: rotateZ(180deg); }
+  .monopoly-container .game-board-container #side-2.side {
+    right: -300px;
+    top: 400px;
+    transform: rotateZ(-90deg); }
+  .monopoly-container .game-board-container #side-3.side {
+    bottom: 0;
+    right: 100px; }
 
 /*# sourceMappingURL=application.css.map */

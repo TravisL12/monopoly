@@ -7,6 +7,9 @@ Tile.prototype.render = function () {
     var tileEl = document.createElement('div');
     tileEl.className = 'tile ' + this.type;
     tileEl.innerText = this.name;
+    if (this.id) {
+        tileEl.id = this.id;
+    }
     return tileEl;
 }
 
@@ -14,6 +17,7 @@ Corner.prototype = new Tile(this);
 function Corner (params) {
     Tile.call(this, params);
     this.type = 'corner';
+    this.id = params.id;
 };
 
 Property.prototype = new Tile(this);

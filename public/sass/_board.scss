@@ -1,0 +1,78 @@
+$board-dimensions: 900px;
+$corner-dimensions: 100px;
+$tile-height: 100px;
+$tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
+
+.game-board-container {
+    height: $board-dimensions;
+    width:  $board-dimensions;
+    border: 1px solid;
+    position: relative;
+
+    .tile {
+        float: left;
+        height: $tile-height;
+        width:  $tile-width;
+    }
+
+    .tile.corner {
+        position: absolute;
+        height: $corner-dimensions;
+        width: $corner-dimensions;
+        background: red;
+    }
+
+    #go.tile.corner {
+        bottom: 0;
+        left: 0;
+    }
+    #jail.tile.corner {
+        top: 0;
+        left: 0;
+    }
+    #parking.tile.corner {
+        top: 0;
+        right: 0;
+    }
+    #go-to-jail.tile.corner {
+        bottom: 0;
+        right: 0;
+    }
+
+    .tile.property {
+        .property-title {
+            background: lightblue;
+        }
+    }
+
+    .tile.community { background: gold; }
+    .tile.tax       { background: purple; }
+    .tile.utility   { background: gray; }
+    .tile.chance    { background: lime; }
+
+    .side { position: absolute; }
+
+    #side-0.side {
+        left: -300px;
+        bottom: 300px + $corner-dimensions;
+        transform: rotateZ(90deg);
+    }
+
+    #side-1.side {
+        top: 0;
+        left: $tile-height;
+        transform: rotateZ(180deg);
+    }
+
+    #side-2.side {
+        right: -300px;
+        top: 300px + $corner-dimensions;
+        transform: rotateZ(-90deg);
+    }
+
+    #side-3.side {
+        bottom: 0;
+        right: $tile-height;
+    }
+
+}

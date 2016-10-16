@@ -7,29 +7,6 @@ li {
     list-style: none;
 }
 
-$tile-height: 100px;
-$tile-width: 80px;
-
 .monopoly-container {
-    .tile-container {
-        .tile {
-            float: left;
-            border: 1px solid;
-            height: $tile-height;
-            width:  $tile-width;
-            &.corner {
-                width: $tile-height;
-                background: red;
-            }
-            &.property {
-                .property-title {
-                    background: lightblue;
-                }
-            }
-            &.community { background: gold; }
-            &.tax       { background: purple; }
-            &.utility   { background: gray; }
-            &.chance    { background: lime; }
-        }
-    }
+    @import 'board';
 }
