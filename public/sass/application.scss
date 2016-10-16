@@ -19,7 +19,17 @@ $tile-width: 80px;
             width:  $tile-width;
             &.corner {
                 width: $tile-height;
+                background: red;
             }
+            &.property {
+                .property-title {
+                    background: lightblue;
+                }
+            }
+            &.community { background: gold; }
+            &.tax       { background: purple; }
+            &.utility   { background: gray; }
+            &.chance    { background: lime; }
         }
     }
 }

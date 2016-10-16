@@ -11,6 +11,17 @@ li {
   height: 100px;
   width: 80px; }
   .monopoly-container .tile-container .tile.corner {
-    width: 100px; }
+    width: 100px;
+    background: red; }
+  .monopoly-container .tile-container .tile.property .property-title {
+    background: lightblue; }
+  .monopoly-container .tile-container .tile.community {
+    background: gold; }
+  .monopoly-container .tile-container .tile.tax {
+    background: purple; }
+  .monopoly-container .tile-container .tile.utility {
+    background: gray; }
+  .monopoly-container .tile-container .tile.chance {
+    background: lime; }
 
 /*# sourceMappingURL=application.css.map */
