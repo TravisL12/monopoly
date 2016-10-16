@@ -30,12 +30,15 @@ function Property (params) {
 
 Property.prototype.render = function () {
     var tileEl = document.createElement('div');
+    tileEl.className = 'tile ' + this.type;
+    var newContent = document.createTextNode(this.name); 
+
     var nameEl = document.createElement('div');
-    nameEl.className = 'property-title';
-    nameEl.innerText = this.name;
+    nameEl.className = 'property-color ' + this.color.toLowerCase();
     tileEl.appendChild(nameEl);
 
-    tileEl.className = 'tile ' + this.type;
+    tileEl.appendChild(newContent);
+
     return tileEl;
 }
 

@@ -8,15 +8,15 @@ var tileData = {
 
     sides: [
         [
-            new Property({ name: 'Connecticut Avenue', cost: 120, color: 'SkyBlue' }),
-            new Property({ name: 'Vermont Avenue', cost: 100, color: 'SkyBlue' }),
+            new Property({ name: 'Connecticut Avenue', cost: 120, color: 'LightBlue' }),
+            new Property({ name: 'Vermont Avenue', cost: 100, color: 'LightBlue' }),
             new Chance({ name: 'Chance' }),
-            new Property({ name: 'Oriental Avenue', cost: 100, color: 'SkyBlue' }),
+            new Property({ name: 'Oriental Avenue', cost: 100, color: 'LightBlue' }),
             new Utility({ name: 'Reading Railroad', cost: 200 }),
             new Tax({ name: 'Income Tax', tax: 200 }),
-            new Property({ name: 'Baltic Avenue', cost: 60, color: 'SaddleBrown' }),
+            new Property({ name: 'Baltic Avenue', cost: 60, color: 'Brown' }),
             new Community({ name: 'Community Chest'}),
-            new Property({ name: 'Mediterranean Avenue', cost: 60, color: 'SaddleBrown' }),
+            new Property({ name: 'Mediterranean Avenue', cost: 60, color: 'Brown' }),
         ],
         [
             new Property({ name: 'New York Avenue', cost: 200, color: 'Orange' }),
@@ -24,10 +24,10 @@ var tileData = {
             new Community({ name: 'Community Chest'}),
             new Property({ name: 'St. James Place', cost: 180, color: 'Orange' }),
             new Utility({ name: 'Pennsylvania Railroad', cost: 200 }),
-            new Property({ name: 'Virginia Avenue', cost: 160, color: 'DarkOrchid' }),
-            new Property({ name: 'States Avenue', cost: 140, color: 'DarkOrchid' }),
+            new Property({ name: 'Virginia Avenue', cost: 160, color: 'Purple' }),
+            new Property({ name: 'States Avenue', cost: 140, color: 'Purple' }),
             new Utility({ name: 'Electric Company', cost: 150 }),
-            new Property({ name: 'St. Charles Place', cost: 140, color: 'DarkOrchid' }),
+            new Property({ name: 'St. Charles Place', cost: 140, color: 'Purple' }),
         ],
         [
             new Property({ name: 'Kentucky Avenue', cost: 220, color: 'Red' }),
