@@ -1,5 +1,5 @@
-$board-dimensions: 1000px;
-$corner-dimensions: 110px;
+$board-dimensions: 100rem;
+$corner-dimensions: 13rem;
 $tile-height: $corner-dimensions;
 $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
 
@@ -10,14 +10,55 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
     position: relative;
     background: #CDE6D0;
 
+    .side {
+        position: absolute;
+        display: flex;
+        flex-direction: row-reverse;
+        left: $corner-dimensions;
+        transform-origin: top left;
+        box-sizing: border-box;
+    }
+
+    #side-0.side {
+        top:  $corner-dimensions;
+        transform: rotateZ(90deg);
+    }
+
+    #side-1.side {
+        top:  $corner-dimensions;
+        transform: rotateZ(180deg);
+        transform-origin: top;
+    }
+
+    #side-2.side {
+        top:  $corner-dimensions;
+        transform-origin: top right;
+        transform: rotateZ(-90deg);
+    }
+
+    #side-3.side {
+        bottom: 0;
+    }
+
     .tile {
-        float: left;
         height: $tile-height;
         width:  $tile-width;
-        border: 3px solid;
-        border-left-width: 2px;
-        border-right-width: 1px;
         box-sizing: border-box;
+        position: relative;
+
+        border-style: solid;
+        border-top-width: 2px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 1px;
+
+        font-family: 'Helvetica';
+        font-size: 1.1rem;
+        text-align: center;
+        p {
+            margin: 0;
+            padding: 5px;
+        }
     }
 
     .tile.corner {
@@ -25,7 +66,7 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
         height: $corner-dimensions;
         width: $corner-dimensions;
         background: red;
-        border: 2px solid;
+        border: 1px solid;
     }
 
     #go.tile.corner {
@@ -49,7 +90,7 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
         .property-color {
             height: 20%;
             width: 100%;
-            border-bottom: 3px solid;
+            border-bottom: 2px solid;
 
             &.lightblue { background: lightblue; }
             &.brown     { background: brown;     }
@@ -62,36 +103,23 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
         }
     }
 
-    .tile.community { background: gold; }
+    .cost {
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tile.community {
+        background: url('/public/images/community_chest.gif') center 75% no-repeat;
+        background-size: contain;
+    }
+    .tile.chance    {
+        background: url('/public/images/chance.png') center 75% no-repeat;
+        background-size: 5rem;
+    }
+
     .tile.tax       { background: purple; }
     .tile.utility   { background: gray; }
-    .tile.chance    { background: lime; }
-
-    .side {
-        position: absolute;
-        left: $corner-dimensions;
-        transform-origin: top left;
-    }
-
-    #side-0.side {
-        top:  $corner-dimensions;
-        transform: rotateZ(90deg);
-    }
-
-    #side-1.side {
-        top:  $corner-dimensions;
-        transform: rotateZ(180deg);
-        transform-origin: top;
-    }
-
-    #side-2.side {
-        top:  $corner-dimensions;
-        transform-origin: top right;
-        transform: rotateZ(-90deg);
-    }
-
-    #side-3.side {
-        bottom: 0;
-    }
 
 }

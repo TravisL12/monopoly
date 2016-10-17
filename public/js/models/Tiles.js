@@ -1,15 +1,37 @@
 function Tile(params) {
     this.name = params.name;
     this.type = params.type;
+    if (params.cost) {
+        this.cost = params.cost;
+    }
 };
 
 Tile.prototype.render = function () {
     var tileEl = document.createElement('div');
     tileEl.className = 'tile ' + this.type;
-    tileEl.innerText = this.name;
+
+    if (this.color) {
+        var colorEl = document.createElement('div');
+        colorEl.className = 'property-color ' + this.color.toLowerCase();
+        tileEl.appendChild(colorEl);
+    }
+
+    var tileName = document.createElement('p');
+    tileName.className = 'name';
+    tileName.innerText = this.name;
+    tileEl.appendChild(tileName);
+
+    if (this.cost) {
+        var tileCost = document.createElement('p');
+        tileCost.className = 'cost';
+        tileCost.innerText = '$' + this.cost;
+        tileEl.appendChild(tileCost);
+    }
+
     if (this.id) {
         tileEl.id = this.id;
     }
+
     return tileEl;
 }
 
@@ -27,20 +49,6 @@ function Property (params) {
     this.cost  = params.cost;
     this.color = params.color;
 };
-
-Property.prototype.render = function () {
-    var tileEl = document.createElement('div');
-    tileEl.className = 'tile ' + this.type;
-    var newContent = document.createTextNode(this.name); 
-
-    var nameEl = document.createElement('div');
-    nameEl.className = 'property-color ' + this.color.toLowerCase();
-    tileEl.appendChild(nameEl);
-
-    tileEl.appendChild(newContent);
-
-    return tileEl;
-}
 
 Community.prototype = new Tile(this);
 function Community (params) {
