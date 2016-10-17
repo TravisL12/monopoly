@@ -1,14 +1,14 @@
 var tileData = {
     corners: [
-        new Corner({ name: 'Go', id: 'go'}),
-        new Corner({ name: 'In Jail/Just Visiting', id: 'jail' }),
-        new Corner({ name: 'Free Parking', id: 'parking' }),
-        new Corner({ name: 'Go To Jail', id:'go-to-jail' }),
+        new Corner({ id: 'go' }),
+        new Corner({ id: 'jail' }),
+        new Corner({ id: 'parking' }),
+        new Corner({ id:'go-to-jail' }),
     ],
 
     sides: [
         [
-            new Property({ name: 'Mediterranean Avenue', cost: 60, color: 'Brown' }),
+            new Property({ name: 'Mediter- ranean Avenue', cost: 60, color: 'Brown' }),
             new Community({ name: 'Community Chest'}),
             new Property({ name: 'Baltic Avenue', cost: 60, color: 'Brown' }),
             new Tax({ name: 'Income Tax', tax: 200 }),

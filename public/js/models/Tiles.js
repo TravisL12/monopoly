@@ -16,10 +16,12 @@ Tile.prototype.render = function () {
         tileEl.appendChild(colorEl);
     }
 
-    var tileName = document.createElement('p');
-    tileName.className = 'name';
-    tileName.innerText = this.name;
-    tileEl.appendChild(tileName);
+    if (this.cost) {
+        var tileName = document.createElement('p');
+        tileName.className = 'name';
+        tileName.innerText = this.name.toUpperCase();
+        tileEl.appendChild(tileName);
+    }
 
     if (this.cost) {
         var tileCost = document.createElement('p');

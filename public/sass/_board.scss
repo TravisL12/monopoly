@@ -52,8 +52,8 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
         border-left-width: 1px;
         border-right-width: 1px;
 
-        font-family: 'Helvetica';
-        font-size: 1.1rem;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 0.9rem;
         text-align: center;
         p {
             margin: 0;
@@ -72,18 +72,29 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
     #go.tile.corner {
         bottom: 0;
         left: 0;
+        background: url('/public/images/go.gif') center 75% no-repeat;
+        background-size: contain;
+        transform: rotate(90deg);
     }
     #jail.tile.corner {
         top: 0;
         left: 0;
+        background: url('/public/images/in-jail.jpg') top right no-repeat;
+        background-size: 10rem;
+        transform: rotate(90deg);
     }
     #parking.tile.corner {
         top: 0;
         right: 0;
+        background: url('/public/images/free-parking.png') center 75% no-repeat;
+        background-size: contain;
+        transform: rotate(-90deg);
     }
     #go-to-jail.tile.corner {
         bottom: 0;
         right: 0;
+        background: url('/public/images/go-to-jail.png') center 75% no-repeat;
+        background-size: contain;
     }
 
     .tile.property {

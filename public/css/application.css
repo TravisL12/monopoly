@@ -1,3 +1,6 @@
+@font-face {
+  font-family: "Kabel";
+  src: url("/public/fonts/kabel.ttf"); }
 html {
   font-size: 10px; }
 
@@ -44,8 +47,8 @@ li {
     border-bottom-width: 1px;
     border-left-width: 1px;
     border-right-width: 1px;
-    font-family: 'Helvetica';
-    font-size: 1.1rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 0.9rem;
     text-align: center; }
     .monopoly-container .game-board-container .tile p {
       margin: 0;
@@ -58,16 +61,27 @@ li {
     border: 1px solid; }
   .monopoly-container .game-board-container #go.tile.corner {
     bottom: 0;
-    left: 0; }
+    left: 0;
+    background: url("/public/images/go.gif") center 75% no-repeat;
+    background-size: contain;
+    transform: rotate(90deg); }
   .monopoly-container .game-board-container #jail.tile.corner {
     top: 0;
-    left: 0; }
+    left: 0;
+    background: url("/public/images/in-jail.jpg") top right no-repeat;
+    background-size: 10rem;
+    transform: rotate(90deg); }
   .monopoly-container .game-board-container #parking.tile.corner {
     top: 0;
-    right: 0; }
+    right: 0;
+    background: url("/public/images/free-parking.png") center 75% no-repeat;
+    background-size: contain;
+    transform: rotate(-90deg); }
   .monopoly-container .game-board-container #go-to-jail.tile.corner {
     bottom: 0;
-    right: 0; }
+    right: 0;
+    background: url("/public/images/go-to-jail.png") center 75% no-repeat;
+    background-size: contain; }
   .monopoly-container .game-board-container .tile.property .property-color {
     height: 20%;
     width: 100%;
