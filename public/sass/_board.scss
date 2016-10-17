@@ -1,5 +1,5 @@
 $board-dimensions: 100rem;
-$corner-dimensions: 13rem;
+$corner-dimensions: $board-dimensions/7.7;
 $tile-height: $corner-dimensions;
 $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
 
@@ -79,7 +79,7 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
     #jail.tile.corner {
         top: 0;
         left: 0;
-        background: url('/public/images/in-jail.jpg') top right no-repeat;
+        background: url("/public/images/in-jail.jpg") 110% -10% no-repeat;
         background-size: 10rem;
         transform: rotate(90deg);
     }

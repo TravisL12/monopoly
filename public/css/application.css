@@ -21,25 +21,25 @@ li {
     position: absolute;
     display: flex;
     flex-direction: row-reverse;
-    left: 13rem;
+    left: 12.98701rem;
     transform-origin: top left;
     box-sizing: border-box; }
   .monopoly-container .game-board-container #side-0.side {
-    top: 13rem;
+    top: 12.98701rem;
     transform: rotateZ(90deg); }
   .monopoly-container .game-board-container #side-1.side {
-    top: 13rem;
+    top: 12.98701rem;
     transform: rotateZ(180deg);
     transform-origin: top; }
   .monopoly-container .game-board-container #side-2.side {
-    top: 13rem;
+    top: 12.98701rem;
     transform-origin: top right;
     transform: rotateZ(-90deg); }
   .monopoly-container .game-board-container #side-3.side {
     bottom: 0; }
   .monopoly-container .game-board-container .tile {
-    height: 13rem;
-    width: 8.22222rem;
+    height: 12.98701rem;
+    width: 8.22511rem;
     box-sizing: border-box;
     position: relative;
     border-style: solid;
@@ -55,8 +55,8 @@ li {
       padding: 5px; }
   .monopoly-container .game-board-container .tile.corner {
     position: absolute;
-    height: 13rem;
-    width: 13rem;
+    height: 12.98701rem;
+    width: 12.98701rem;
     background: red;
     border: 1px solid; }
   .monopoly-container .game-board-container #go.tile.corner {
@@ -68,7 +68,7 @@ li {
   .monopoly-container .game-board-container #jail.tile.corner {
     top: 0;
     left: 0;
-    background: url("/public/images/in-jail.jpg") top right no-repeat;
+    background: url("/public/images/in-jail.jpg") 110% -10% no-repeat;
     background-size: 10rem;
     transform: rotate(90deg); }
   .monopoly-container .game-board-container #parking.tile.corner {

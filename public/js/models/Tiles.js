@@ -16,7 +16,7 @@ Tile.prototype.render = function () {
         tileEl.appendChild(colorEl);
     }
 
-    if (this.cost) {
+    if (this.name) {
         var tileName = document.createElement('p');
         tileName.className = 'name';
         tileName.innerText = this.name.toUpperCase();
