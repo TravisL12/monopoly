@@ -1,3 +1,10 @@
+// Variables
+$board-dimensions: 100rem;
+$corner-dimensions: $board-dimensions/7.7;
+$tile-height: $corner-dimensions;
+$tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
+
+// Reset stuff
 @font-face {
     font-family:"Kabel";
     src: url("/public/fonts/kabel.ttf");
@@ -14,6 +21,5 @@ li {
     list-style: none;
 }
 
-.monopoly-container {
-    @import 'board';
-}
+@import 'board';
+@import 'game-status';

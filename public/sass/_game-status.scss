@@ -1,0 +1,12 @@
+.control-container {
+    float: none;
+    font-family: 'Helvetica Neue';
+    font-size: 1.8rem;
+    width: auto;
+    margin-right: 1rem;
+    height: $board-dimensions;
+    overflow: hidden;
+    vertical-align: top;
+    border: 1px solid red;
+    padding: 1rem;
+}
