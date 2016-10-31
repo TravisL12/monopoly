@@ -1,0 +1,61 @@
+.control-container {
+    float: none;
+    font-family: 'Helvetica Neue';
+    font-size: 1.8rem;
+    width: auto;
+    margin-right: 1rem;
+    height: $board-dimensions;
+    overflow: hidden;
+    vertical-align: top;
+    border: 1px solid;
+    padding: 1rem;
+
+    .game-controls {
+        width: 100%;
+        height: 10rem;
+        border: 1px solid;
+        margin-bottom: 1rem;
+
+        .dice-container {
+            width: 20rem;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: linear-gradient(#fff 60%, #ddd);
+            overflow: hidden;
+            .dice {
+                background: #f9f9f9;
+                border-radius: 0.5rem;
+                width: 7.6rem;
+                height: 7.6rem;
+                border: 1px solid;
+                padding: 0.4rem;
+                .number {
+                    width: 6px;
+                    height: 6px;
+                    background: #fff;
+                    border-radius: 10px;
+                    &.one   {
+                        box-shadow: 35px 35px 0 #000;
+                    }
+                    &.two   {
+                        box-shadow: 10px 10px 0 #000, 60px 60px 0 #000;
+                    }
+                    &.three {
+                        box-shadow: 10px 10px 0 #000, 35px 35px 0 #000, 60px 60px 0 #000;
+                    }
+                    &.four  {
+                        box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000;
+                    }
+                    &.five  {
+                        box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000, 35px 35px 0 #000;
+                    }
+                    &.six   {
+                        box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000, 35px 10px 0 #000, 35px 60px 0 #000;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -13,9 +13,9 @@ function random (max, min) {
 
 Game.prototype = {
     initialize: function () {
-        var playerCount = 2,
-            name = ['Travis', 'Marisa'],
-            gamePiece = ['Dog', 'Boat'];
+        var playerCount = 4,
+            name = ['Travis', 'Marisa', 'Connor', 'Oliver'],
+            gamePiece = ['Dog', 'Boat', 'Shoe', 'Car'];
 
         this.players = [];
         for (var i = 0; i < playerCount; i++) {
@@ -58,7 +58,7 @@ Game.prototype = {
         var playersEl = '';
         for (var i in this.players) {
             var player = this.players[i];
-            playersEl += "<li>" + player.name + " - $" + player.money + "</li>";
+            playersEl += "<div class='player-stat'>" + player.name + " - $" + player.money + "</div>";
         }
         playerStatsEl.innerHTML = playersEl;
     }
