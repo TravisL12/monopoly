@@ -1,6 +1,7 @@
 function Tile(params) {
     this.name = params.name;
     this.type = params.type;
+    this.occupied = [];
     if (params.cost) {
         this.cost = params.cost;
     }

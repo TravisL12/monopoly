@@ -1,18 +1,36 @@
-var Board = function () {
-    this.tiles = tileData;
+var Board = function (tileData) {
+    this.tileData = tileData;
+    this.tiles = this.buildSpaces();
 }
 
 Board.prototype = {
-    render: function (element) {
+    /**
+     * buildSpaces
+     * @return {array} make the games tiles a traversable array
+     */
+    buildSpaces () {
+        let spaces = [];
+        for(let i = 0; i < 4; i++) {
+            spaces.push(this.tileData.corners[i]);
+            spaces = spaces.concat(this.tileData.sides[i]);
+        }
+        return spaces;
+    },
+
+    /**
+     * render
+     * @param  {DOM} element
+     */
+    render (element) {
         var tileContainerElement = document.createElement('div');
         tileContainerElement.className = 'game-board-container';
 
-        this.tiles.corners.forEach(function (tile) {
+        this.tileData.corners.forEach(function (tile) {
             tileContainerElement.appendChild(tile.render());
         });
 
-        for (var i in this.tiles.sides) {
-            var side = this.tiles.sides[i];
+        for (var i in this.tileData.sides) {
+            var side = this.tileData.sides[i];
             var sideElement = document.createElement('div');
             sideElement.className = 'side';
             sideElement.id = 'side-' + i;

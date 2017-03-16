@@ -1,7 +1,7 @@
-var Game = function (elementId) {
-    var gameEl = document.getElementById(elementId)
-    var board = new Board();
-    board.render(gameEl);
+var Game = function (elementId, tiles) {
+    this.el = document.getElementById(elementId)
+    this.board = new Board(tiles);
+    this.board.render(this.el);
     this.initialize();
     this.doublesCount = 0;
 }
@@ -15,7 +15,7 @@ Game.prototype = {
     initialize: function () {
         var playerCount = 4,
             name = ['Travis', 'Marisa', 'Connor', 'Oliver'],
-            gamePiece = ['Dog', 'Boat', 'Shoe', 'Car'];
+            gamePiece = ['red', 'blue', 'green', 'pink'];
 
         this.players = [];
         for (var i = 0; i < playerCount; i++) {
@@ -36,14 +36,21 @@ Game.prototype = {
     },
 
     roll: function () {
-        var dice1 = random(6),
-            dice2 = random(6);
+        let dice1 = random(6),
+            dice2 = random(6),
+            dice1El = document.getElementById('dice1').getElementsByClassName('number')[0],
+            dice2El = document.getElementById('dice2').getElementsByClassName('number')[0];
 
         var doubles = dice1 === dice2;
 
         if (doubles) {
             this.doublesIterate();
         }
+
+        dice1El.classList = 'number';
+        dice2El.classList = 'number';
+        dice1El.classList.add('roll-' + dice1);
+        dice2El.classList.add('roll-' + dice2);
 
         return {
             dice1: dice1, 

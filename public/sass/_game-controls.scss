@@ -15,6 +15,7 @@
         height: 10rem;
         border: 1px solid;
         margin-bottom: 1rem;
+        background: linear-gradient(#fff 60%, #ddd);
 
         .dice-container {
             width: 20rem;
@@ -22,7 +23,6 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background: linear-gradient(#fff 60%, #ddd);
             overflow: hidden;
             .dice {
                 background: #f9f9f9;
@@ -32,27 +32,47 @@
                 border: 1px solid;
                 padding: 0.4rem;
                 .number {
-                    width: 6px;
-                    height: 6px;
+                    width: 10px;
+                    height: 10px;
                     background: #fff;
                     border-radius: 10px;
-                    &.one   {
+                    &.roll-1   {
                         box-shadow: 35px 35px 0 #000;
                     }
-                    &.two   {
-                        box-shadow: 10px 10px 0 #000, 60px 60px 0 #000;
+                    &.roll-2   {
+                        box-shadow:
+                        10px 10px 0 #000,
+                        60px 60px 0 #000;
                     }
-                    &.three {
-                        box-shadow: 10px 10px 0 #000, 35px 35px 0 #000, 60px 60px 0 #000;
+                    &.roll-3 {
+                        box-shadow:
+                        10px 10px 0 #000,
+                        35px 35px 0 #000,
+                        60px 60px 0 #000;
                     }
-                    &.four  {
-                        box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000;
+                    &.roll-4  {
+                        box-shadow:
+                        10px 10px 0 #000,
+                        10px 60px 0 #000,
+                        60px 10px 0 #000,
+                        60px 60px 0 #000;
                     }
-                    &.five  {
-                        box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000, 35px 35px 0 #000;
+                    &.roll-5  {
+                        box-shadow:
+                        10px 10px 0 #000,
+                        10px 60px 0 #000,
+                        60px 10px 0 #000,
+                        60px 60px 0 #000,
+                        35px 35px 0 #000;
                     }
-                    &.six   {
-                        box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000, 35px 10px 0 #000, 35px 60px 0 #000;
+                    &.roll-6   {
+                        box-shadow:
+                        10px 10px 0 #000,
+                        10px 60px 0 #000,
+                        60px 10px 0 #000,
+                        60px 60px 0 #000,
+                        35px 10px 0 #000,
+                        35px 60px 0 #000;
                     }
                 }
             }

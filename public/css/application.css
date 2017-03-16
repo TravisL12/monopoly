@@ -136,14 +136,14 @@ li {
     width: 100%;
     height: 10rem;
     border: 1px solid;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    background: linear-gradient(#fff 60%, #ddd); }
     .control-container .game-controls .dice-container {
       width: 20rem;
       height: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background: linear-gradient(#fff 60%, #ddd);
       overflow: hidden; }
       .control-container .game-controls .dice-container .dice {
         background: #f9f9f9;
@@ -153,21 +153,21 @@ li {
         border: 1px solid;
         padding: 0.4rem; }
         .control-container .game-controls .dice-container .dice .number {
-          width: 6px;
-          height: 6px;
+          width: 10px;
+          height: 10px;
           background: #fff;
           border-radius: 10px; }
-          .control-container .game-controls .dice-container .dice .number.one {
+          .control-container .game-controls .dice-container .dice .number.roll-1 {
             box-shadow: 35px 35px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.two {
+          .control-container .game-controls .dice-container .dice .number.roll-2 {
             box-shadow: 10px 10px 0 #000, 60px 60px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.three {
+          .control-container .game-controls .dice-container .dice .number.roll-3 {
             box-shadow: 10px 10px 0 #000, 35px 35px 0 #000, 60px 60px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.four {
-            box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.five {
-            box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000, 35px 35px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.six {
-            box-shadow: 10px 10px 0 #000, 60px 10px 0 #000, 10px 60px 0 #000, 60px 60px 0 #000, 35px 10px 0 #000, 35px 60px 0 #000; }
+          .control-container .game-controls .dice-container .dice .number.roll-4 {
+            box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000; }
+          .control-container .game-controls .dice-container .dice .number.roll-5 {
+            box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000, 35px 35px 0 #000; }
+          .control-container .game-controls .dice-container .dice .number.roll-6 {
+            box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000, 35px 10px 0 #000, 35px 60px 0 #000; }
 
 /*# sourceMappingURL=application.css.map */
