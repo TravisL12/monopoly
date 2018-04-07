@@ -1,5 +1,5 @@
 .monopoly-container {
-    float: left;
+    display: inline-block;
     margin-right: 1rem;
     .game-board-container {
         height: $board-dimensions;

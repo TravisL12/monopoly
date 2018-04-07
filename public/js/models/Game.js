@@ -1,4 +1,4 @@
-var Game = function (elementId, tiles) {
+const Game = function (elementId, tiles) {
     this.el = document.getElementById(elementId)
     this.board = new Board(tiles);
     this.board.render(this.el);
@@ -13,12 +13,12 @@ function random (max, min) {
 
 Game.prototype = {
     initialize: function () {
-        var playerCount = 4,
+        let playerCount = 4,
             name = ['Travis', 'Marisa', 'Connor', 'Oliver'],
             gamePiece = ['red', 'blue', 'green', 'pink'];
 
         this.players = [];
-        for (var i = 0; i < playerCount; i++) {
+        for (let i = 0; i < playerCount; i++) {
             this.players.push(new Player(name[i], gamePiece[i]));
         }
 
@@ -31,7 +31,7 @@ Game.prototype = {
         if (this.doublesCount < 3) {
             this.doublesCount += 1;
         } else if (this.doublesCount === 3) {
-            console.log('player goes to jail');
+            window.alert('player goes to jail');
         }
     },
 
@@ -41,16 +41,14 @@ Game.prototype = {
             dice1El = document.getElementById('dice1').getElementsByClassName('number')[0],
             dice2El = document.getElementById('dice2').getElementsByClassName('number')[0];
 
-        var doubles = dice1 === dice2;
+        let doubles = dice1 === dice2;
 
         if (doubles) {
             this.doublesIterate();
         }
 
-        dice1El.classList = 'number';
-        dice2El.classList = 'number';
-        dice1El.classList.add('roll-' + dice1);
-        dice2El.classList.add('roll-' + dice2);
+        dice1El.classList = 'number roll-' + dice1;
+        dice2El.classList = 'number roll-' + dice2;
 
         return {
             dice1: dice1, 
@@ -61,10 +59,10 @@ Game.prototype = {
     },
 
     updatePlayers: function () {
-        var playerStatsEl = document.getElementById('player-stats');
-        var playersEl = '';
-        for (var i in this.players) {
-            var player = this.players[i];
+        let playerStatsEl = document.getElementById('player-stats');
+        let playersEl = '';
+        for (let i in this.players) {
+            let player = this.players[i];
             playersEl += "<div class='player-stat'>" + player.name + " - $" + player.money + "</div>";
         }
         playerStatsEl.innerHTML = playersEl;

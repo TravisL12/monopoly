@@ -3,13 +3,13 @@ var tileData = {
         new Corner({ id: 'go' }),
         new Corner({ id: 'jail' }),
         new Corner({ id: 'parking' }),
-        new Corner({ id:'go-to-jail' }),
+        new Corner({ id: 'go-to-jail' }),
     ],
 
     sides: [
         [
-            new Property({ name: 'Mediter- ranean Avenue', cost: 60, color: 'Brown' }),
-            new Community({ name: 'Community Chest'}),
+            new Property({ name: 'Mediter-ranean Avenue', cost: 60, color: 'Brown' }),
+            new Community({ name: 'Community Chest' }),
             new Property({ name: 'Baltic Avenue', cost: 60, color: 'Brown' }),
             new Tax({ name: 'Income Tax', tax: 200 }),
             new Utility({ name: 'Reading Railroad', cost: 200 }),
@@ -25,7 +25,7 @@ var tileData = {
             new Property({ name: 'Virginia Avenue', cost: 160, color: 'Purple' }),
             new Utility({ name: 'Pennsylvania Railroad', cost: 200 }),
             new Property({ name: 'St. James Place', cost: 180, color: 'Orange' }),
-            new Community({ name: 'Community Chest'}),
+            new Community({ name: 'Community Chest' }),
             new Property({ name: 'Tennessee Avenue', cost: 180, color: 'Orange' }),
             new Property({ name: 'New York Avenue', cost: 200, color: 'Orange' }),
         ],
@@ -43,15 +43,15 @@ var tileData = {
         [
             new Property({ name: 'Pacific Avenue', cost: 300, color: 'Green' }),
             new Property({ name: 'North Carolina Avenue', cost: 300, color: 'Green' }),
-            new Community({ name: 'Community Chest'}),
+            new Community({ name: 'Community Chest' }),
             new Property({ name: 'Pennsylvania Avenue', cost: 320, color: 'Green' }),
             new Utility({ name: 'Short Line', cost: 200 }),
             new Chance({ name: 'Chance' }),
             new Property({ name: 'Park Place', cost: 350, color: 'Blue' }),
             new Tax({ name: 'Luxury Tax', tax: 200 }),
             new Property({ name: 'Boardwalk', cost: 400, color: 'Blue' }),
-        ]
-    ]
+        ],
+    ],
 };
 
 var game = new Game('game', tileData);
