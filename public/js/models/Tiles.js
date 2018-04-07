@@ -1,79 +1,94 @@
-function Tile(params) {
-    this.name = params.name;
-    this.type = params.type;
-    this.occupied = [];
-    if (params.cost) {
-        this.cost = params.cost;
-    }
-};
-
-Tile.prototype.render = function () {
-    var tileEl = document.createElement('div');
-    tileEl.className = 'tile ' + this.type;
-
-    if (this.color) {
-        var colorEl = document.createElement('div');
-        colorEl.className = 'property-color ' + this.color.toLowerCase();
-        tileEl.appendChild(colorEl);
+class Tile {
+    constructor(params) {
+        this.name = params.name;
+        this.type = params.type;
+        this.occupied = [];
+        if (params.cost) {
+            this.cost = params.cost;
+        }
     }
 
-    if (this.name) {
-        var tileName = document.createElement('p');
-        tileName.className = 'name';
-        tileName.innerText = this.name.toUpperCase();
-        tileEl.appendChild(tileName);
+    addPlayer(playerNumber) {
+        const playersEl = this.el.querySelector(`.players .player-${playerNumber}`);
+        playersEl.classList.toggle(`active`);
     }
 
-    if (this.cost) {
-        var tileCost = document.createElement('p');
-        tileCost.className = 'cost';
-        tileCost.innerText = '$' + this.cost;
-        tileEl.appendChild(tileCost);
-    }
+    render() {
+        this.el = document.createElement('div');
+        this.el.className = 'tile ' + this.type;
 
-    if (this.id) {
-        tileEl.id = this.id;
-    }
+        const playersEl = document.createElement('div');
+        playersEl.innerHTML = `
+        <div class='player-1'></div><div class='player-2'></div><div class='player-3'></div><div class='player-4'></div>
+        `;
+        playersEl.className = 'players';
+        this.el.appendChild(playersEl);
 
-    return tileEl;
+        if (this.color) {
+            const colorEl = document.createElement('div');
+            colorEl.className = 'property-color ' + this.color.toLowerCase();
+            this.el.appendChild(colorEl);
+        }
+
+        if (this.name) {
+            const tileName = document.createElement('p');
+            tileName.className = 'name';
+            tileName.innerText = this.name.toUpperCase();
+            this.el.appendChild(tileName);
+        }
+
+        if (this.cost) {
+            const tileCost = document.createElement('p');
+            tileCost.className = 'cost';
+            tileCost.innerText = '$' + this.cost;
+            this.el.appendChild(tileCost);
+        }
+
+        if (this.id) {
+            this.el.id = this.id;
+        }
+
+        return this.el;
+    }
 }
 
-Corner.prototype = new Tile(this);
-function Corner (params) {
-    Tile.call(this, params);
-    this.type = 'corner';
-    this.id = params.id;
-};
-
-Property.prototype = new Tile(this);
-function Property (params) {
-    Tile.call(this, params);
-    this.type  = 'property';
-    this.cost  = params.cost;
-    this.color = params.color;
-};
-
-Community.prototype = new Tile(this);
-function Community (params) {
-    Tile.call(this, params);
-    this.type = 'community';
-};
-
-Tax.prototype = new Tile(this);
-function Tax (params) {
-    Tile.call(this, params);
-    this.type = 'tax';
-    this.tax = params.tax;
-};
-
-Utility.prototype = new Tile(this);
-function Utility (params) {
-    Tile.call(this, params);
-    this.type = 'utility';
-};
-
-Chance.prototype = new Tile(this);
-function Chance (params) {
-    Tile.call(this, params);
-    this.type = 'chance';
-};
+class Corner extends Tile {
+    constructor(params) {
+        super(params);
+        this.type = 'corner';
+        this.id = params.id;
+    }
+}
+class Property extends Tile {
+    constructor(params) {
+        super(params);
+        this.type = 'property';
+        this.cost = params.cost;
+        this.color = params.color;
+    }
+}
+class Community extends Tile {
+    constructor(params) {
+        super(params);
+        this.type = 'community';
+    }
+}
+class Tax extends Tile {
+    constructor(params) {
+        super(params);
+        this.type = 'tax';
+        this.tax = params.tax;
+    }
+}
+class Utility extends Tile {
+    constructor(params) {
+        super(params);
+        this.type = 'utility';
+    }
+}
+class Chance extends Tile {
+    constructor(params) {
+        super(params);
+        this.type = 'chance';
+    }
+}

@@ -54,7 +54,12 @@ var tileData = {
     ],
 };
 
-var game = new Game('game', tileData);
+function random(max, min) {
+    min = min || 0;
+    return Math.ceil(Math.random() * max + min);
+}
+
+const game = new Game('game', tileData);
 
 // game.setup
 //   game.numberOfPlayers (how many?)

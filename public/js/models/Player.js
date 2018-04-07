@@ -1,12 +1,12 @@
-var Player = function (name, gamePiece) {
+class Player {
+  constructor(name, gamePiece) {
     this.name = name;
+    this.spaceIndex = 0; // place on the board by index
     this.gamePiece = gamePiece;
     this.money = 1000;
-}
+  }
 
-Player.prototype = {
-    turn: function () {
-        var roll = Game.prototype.roll();
-        console.log(roll);
-    },
+  update(roll) {
+    this.spaceIndex += roll.total;
+  }
 }

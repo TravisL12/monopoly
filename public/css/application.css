@@ -56,6 +56,28 @@ li {
       .monopoly-container .game-board-container .tile p {
         margin: 0;
         padding: 5px; }
+      .monopoly-container .game-board-container .tile .players {
+        position: absolute;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around; }
+        .monopoly-container .game-board-container .tile .players .player-1,
+        .monopoly-container .game-board-container .tile .players .player-2,
+        .monopoly-container .game-board-container .tile .players .player-3,
+        .monopoly-container .game-board-container .tile .players .player-4 {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%; }
+        .monopoly-container .game-board-container .tile .players .player-1.active {
+          background-color: red; }
+        .monopoly-container .game-board-container .tile .players .player-2.active {
+          background-color: gold; }
+        .monopoly-container .game-board-container .tile .players .player-3.active {
+          background-color: violet; }
+        .monopoly-container .game-board-container .tile .players .player-4.active {
+          background-color: purple; }
     .monopoly-container .game-board-container .tile.corner {
       position: absolute;
       height: 12.987012987rem;

@@ -57,6 +57,37 @@
                 margin: 0;
                 padding: 5px;
             }
+
+            .players {
+                position: absolute;
+                width: 100%;
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                .player-1,
+                .player-2,
+                .player-3,
+                .player-4 {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                }
+
+                .player-1.active {
+                    background-color: red;
+                }
+                .player-2.active {
+                    background-color: gold;
+                }
+                .player-3.active {
+                    background-color: violet;
+                }
+                .player-4.active {
+                    background-color: purple;
+                }
+            }
         }
 
         .tile.corner {
