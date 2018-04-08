@@ -38,16 +38,22 @@ class Game {
         return this.players[this.playerTurn - 1];
     }
 
+    getNextPlayer() {
+        if (this.playerTurn === this.players.length) {
+            this.playerTurn = 1;
+        } else {
+            this.playerTurn += 1;
+        }
+    }
+
     endTurn() {
         this.endTurnBtn.classList.toggle('hide');
         this.rollDiceBtn.classList.toggle('hide');
         this.doublesCount = 0;
         this.currentPlayer.isCurrentPlayer = false;
 
-        if (this.playerTurn === this.players.length) {
-            this.playerTurn = 1;
-        } else {
-            this.playerTurn += 1;
+        if (!this.lastRoll.isDoubles) {
+            this.getNextPlayer();
         }
 
         this.currentPlayer.isCurrentPlayer = true;
@@ -55,12 +61,12 @@ class Game {
     }
 
     nextTurn() {
-        const roll = this.roll();
+        this.roll();
         const player = this.players[this.playerTurn - 1];
 
         // remove from current tile
         this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
-        player.update(roll.total);
+        player.update(this.lastRoll.total);
 
         // place on new tile
         this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
@@ -91,10 +97,10 @@ class Game {
         dice1El.classList = 'number roll-' + dice1;
         dice2El.classList = 'number roll-' + dice2;
 
-        return {
+        this.lastRoll = {
             dice1: dice1,
             dice2: dice2,
-            doubles: doubles,
+            isDoubles: doubles,
             total: dice1 + dice2,
         };
     }
