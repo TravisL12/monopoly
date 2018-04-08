@@ -11,6 +11,34 @@ ul {
 li {
   list-style: none; }
 
+.hide {
+  display: none; }
+
+.control-container .game-controls .dice-container .dice {
+  background: #f9f9f9;
+  border-radius: 0.5rem;
+  width: 7.6rem;
+  height: 7.6rem;
+  border: 1px solid;
+  padding: 0.4rem; }
+  .control-container .game-controls .dice-container .dice .number {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 10px; }
+    .control-container .game-controls .dice-container .dice .number.roll-1 {
+      box-shadow: 35px 35px 0 #000; }
+    .control-container .game-controls .dice-container .dice .number.roll-2 {
+      box-shadow: 10px 10px 0 #000, 60px 60px 0 #000; }
+    .control-container .game-controls .dice-container .dice .number.roll-3 {
+      box-shadow: 10px 10px 0 #000, 35px 35px 0 #000, 60px 60px 0 #000; }
+    .control-container .game-controls .dice-container .dice .number.roll-4 {
+      box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000; }
+    .control-container .game-controls .dice-container .dice .number.roll-5 {
+      box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000, 35px 35px 0 #000; }
+    .control-container .game-controls .dice-container .dice .number.roll-6 {
+      box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000, 35px 10px 0 #000, 35px 60px 0 #000; }
+
 .monopoly-container {
   display: inline-block;
   margin-right: 1rem; }
@@ -162,39 +190,22 @@ li {
     background: linear-gradient(#fff 60%, #ddd);
     display: flex;
     align-items: center; }
-    .control-container .game-controls .game-buttons #roll-dice {
-      width: 5rem; }
-      .control-container .game-controls .game-buttons #roll-dice button {
-        width: 100%; }
+    .control-container .game-controls .game-buttons button {
+      border: none;
+      border-radius: 0;
+      padding: 10px 0;
+      font-size: 18px;
+      text-align: center;
+      width: 150px;
+      box-sizing: border-box;
+      background: #CDE6D0; }
     .control-container .game-controls .dice-container {
       width: 20rem;
       display: flex;
       justify-content: space-around;
       align-items: center;
       overflow: hidden; }
-      .control-container .game-controls .dice-container .dice {
-        background: #f9f9f9;
-        border-radius: 0.5rem;
-        width: 7.6rem;
-        height: 7.6rem;
-        border: 1px solid;
-        padding: 0.4rem; }
-        .control-container .game-controls .dice-container .dice .number {
-          width: 10px;
-          height: 10px;
-          background: #fff;
-          border-radius: 10px; }
-          .control-container .game-controls .dice-container .dice .number.roll-1 {
-            box-shadow: 35px 35px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.roll-2 {
-            box-shadow: 10px 10px 0 #000, 60px 60px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.roll-3 {
-            box-shadow: 10px 10px 0 #000, 35px 35px 0 #000, 60px 60px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.roll-4 {
-            box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.roll-5 {
-            box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000, 35px 35px 0 #000; }
-          .control-container .game-controls .dice-container .dice .number.roll-6 {
-            box-shadow: 10px 10px 0 #000, 10px 60px 0 #000, 60px 10px 0 #000, 60px 60px 0 #000, 35px 10px 0 #000, 35px 60px 0 #000; }
+  .control-container .player-stats-container .player-stat.current {
+    font-weight: bold; }
 
 /*# sourceMappingURL=application.css.map */

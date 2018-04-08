@@ -6,20 +6,25 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
 
 // Reset stuff
 @font-face {
-    font-family:"Kabel";
-    src: url("/public/fonts/kabel.ttf");
+  font-family:"Kabel";
+  src: url("/public/fonts/kabel.ttf");
 }
 
 html { font-size: 10px; }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
+.hide {
+  display: none;
+}
+
+@import 'dice';
 @import 'board';
 @import 'game-controls';

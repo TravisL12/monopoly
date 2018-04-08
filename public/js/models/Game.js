@@ -7,8 +7,14 @@ class Game {
         this.playerTurn = 1;
         this.doublesCount = 0;
         this.players = [];
+
+        this.endTurnBtn = document.getElementById('end-turn');
+        this.rollDiceBtn = document.getElementById('roll-dice');
+
+        this.endTurnBtn.addEventListener('click', this.endTurn.bind(this));
+        this.rollDiceBtn.addEventListener('click', this.nextTurn.bind(this));
+
         this.initialize();
-        document.getElementById('roll-dice').addEventListener('click', this.nextTurn.bind(this));
     }
 
     initialize() {
@@ -22,12 +28,33 @@ class Game {
             this.board.tiles[player.tileIndex].togglePlayer(i + 1);
         }
 
+        this.playerTurn = random(playerCount);
+        this.currentPlayer.isCurrentPlayer = true;
         this.updateGameStats();
-        this.nextTurn(random(playerCount)); // Start Game! Choose random player to start
+        this.nextTurn(); // Start Game! Choose random player to start
     }
 
-    nextTurn(playerTurn) {
-        this.playerTurn = playerTurn;
+    get currentPlayer() {
+        return this.players[this.playerTurn - 1];
+    }
+
+    endTurn() {
+        this.endTurnBtn.classList.toggle('hide');
+        this.rollDiceBtn.classList.toggle('hide');
+        this.doublesCount = 0;
+        this.currentPlayer.isCurrentPlayer = false;
+
+        if (this.playerTurn === this.players.length) {
+            this.playerTurn = 1;
+        } else {
+            this.playerTurn += 1;
+        }
+
+        this.currentPlayer.isCurrentPlayer = true;
+        this.updateGameStats();
+    }
+
+    nextTurn() {
         const roll = this.roll();
         const player = this.players[this.playerTurn - 1];
 
@@ -48,6 +75,8 @@ class Game {
     }
 
     roll() {
+        this.endTurnBtn.classList.remove('hide');
+        this.rollDiceBtn.classList.add('hide');
         let dice1 = random(6),
             dice2 = random(6),
             dice1El = document.getElementById('dice1').getElementsByClassName('number')[0],
@@ -74,8 +103,9 @@ class Game {
         let playersEl = '';
         for (let i in this.players) {
             let player = this.players[i];
-            playersEl +=
-                "<div class='player-stat'>" + player.name + ' - $' + player.money + '</div>';
+            playersEl += `<div class='player-stat ${player.isCurrentPlayer
+                ? 'current'
+                : ''}'>${player.name} - $${player.money}</div>`;
         }
         this.playerStatsEl.innerHTML = playersEl;
     }

@@ -19,11 +19,15 @@
         display: flex;
         align-items: center;
         .game-buttons {
-            #roll-dice {
-                width: 5rem;
-                button {
-                    width: 100%;
-                }
+            button {
+                border: none;
+                border-radius: 0;
+                padding: 10px 0;
+                font-size: 18px;
+                text-align: center;
+                width: 150px;
+                box-sizing: border-box;
+                background: #CDE6D0;
             }
         }
 
@@ -34,56 +38,15 @@
             align-items: center;
             overflow: hidden;
             .dice {
-                background: #f9f9f9;
-                border-radius: 0.5rem;
-                width: 7.6rem;
-                height: 7.6rem;
-                border: 1px solid;
-                padding: 0.4rem;
-                .number {
-                    width: 10px;
-                    height: 10px;
-                    background: #fff;
-                    border-radius: 10px;
-                    &.roll-1   {
-                        box-shadow: 35px 35px 0 #000;
-                    }
-                    &.roll-2   {
-                        box-shadow:
-                        10px 10px 0 #000,
-                        60px 60px 0 #000;
-                    }
-                    &.roll-3 {
-                        box-shadow:
-                        10px 10px 0 #000,
-                        35px 35px 0 #000,
-                        60px 60px 0 #000;
-                    }
-                    &.roll-4  {
-                        box-shadow:
-                        10px 10px 0 #000,
-                        10px 60px 0 #000,
-                        60px 10px 0 #000,
-                        60px 60px 0 #000;
-                    }
-                    &.roll-5  {
-                        box-shadow:
-                        10px 10px 0 #000,
-                        10px 60px 0 #000,
-                        60px 10px 0 #000,
-                        60px 60px 0 #000,
-                        35px 35px 0 #000;
-                    }
-                    &.roll-6   {
-                        box-shadow:
-                        10px 10px 0 #000,
-                        10px 60px 0 #000,
-                        60px 10px 0 #000,
-                        60px 60px 0 #000,
-                        35px 10px 0 #000,
-                        35px 60px 0 #000;
-                    }
-                }
+                @extend %dice;
+            }
+        }
+    }
+
+    .player-stats-container {
+        .player-stat {
+            &.current {
+                font-weight: bold;
             }
         }
     }
