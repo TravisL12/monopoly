@@ -8,7 +8,7 @@ class Tile {
         }
     }
 
-    addPlayer(playerNumber) {
+    togglePlayer(playerNumber) {
         const playersEl = this.el.querySelector(`.players .player-${playerNumber}`);
         playersEl.classList.toggle(`active`);
     }

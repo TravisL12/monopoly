@@ -1,15 +1,16 @@
 class Board {
     constructor(tileData) {
         this.tileData = tileData;
-        this.tiles = this.buildSpaces();
+        this.tiles = this.buildTiles();
     }
 
-    buildSpaces() {
+    buildTiles() {
         let spaces = [];
         for (let i = 0; i < 4; i++) {
             spaces.push(this.tileData.corners[i]);
             spaces = spaces.concat(this.tileData.sides[i]);
         }
+
         return spaces;
     }
 
