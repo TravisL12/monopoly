@@ -166,6 +166,9 @@ li {
     .monopoly-container .game-board-container .tile.chance {
       background: url("/public/images/chance.png") center 75% no-repeat;
       background-size: 5rem; }
+    .monopoly-container .game-board-container .tile.railroad {
+      background: url("/public/images/Train.gif") 10% 60% no-repeat;
+      background-size: 7rem; }
     .monopoly-container .game-board-container .tile.tax {
       background: purple; }
     .monopoly-container .game-board-container .tile.utility {

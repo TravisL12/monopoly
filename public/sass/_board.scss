@@ -158,6 +158,10 @@
             background: url('/public/images/chance.png') center 75% no-repeat;
             background-size: 5rem;
         }
+        .tile.railroad    {
+            background: url('/public/images/Train.gif') 10% 60% no-repeat;
+            background-size: 7rem;
+        }
 
         .tile.tax       { background: purple; }
         .tile.utility   { background: gray; }

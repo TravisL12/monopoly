@@ -86,6 +86,12 @@ class Utility extends Tile {
         this.type = 'utility';
     }
 }
+class Railroad extends Tile {
+    constructor(params) {
+        super(params);
+        this.type = 'railroad';
+    }
+}
 class Chance extends Tile {
     constructor(params) {
         super(params);
