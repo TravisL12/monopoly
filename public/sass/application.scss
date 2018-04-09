@@ -4,6 +4,9 @@ $corner-dimensions: $board-dimensions/7.7;
 $tile-height: $corner-dimensions;
 $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
 
+// colors
+$monopoly-green: #CDE6D0;
+
 // Reset stuff
 @font-face {
   font-family:"Kabel";
@@ -22,7 +25,7 @@ li {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 @import 'dice';

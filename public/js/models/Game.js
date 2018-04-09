@@ -8,8 +8,11 @@ class Game {
         this.doublesCount = 0;
         this.players = [];
 
-        this.endTurnBtn = document.getElementById('end-turn');
-        this.rollDiceBtn = document.getElementById('roll-dice');
+        this.endTurnBtn = document.querySelector('#end-turn button');
+        this.rollDiceBtn = document.querySelector('#roll-dice button');
+        this.dice1El = document.getElementById('dice1').getElementsByClassName('number')[0];
+        this.dice2El = document.getElementById('dice2').getElementsByClassName('number')[0];
+        this.diceDoublesEl = document.querySelector('.dice-container .doubles');
 
         this.endTurnBtn.addEventListener('click', this.endTurn.bind(this));
         this.rollDiceBtn.addEventListener('click', this.nextTurn.bind(this));
@@ -31,7 +34,7 @@ class Game {
         this.playerTurn = random(playerCount);
         this.currentPlayer.isCurrentPlayer = true;
         this.updateGameStats();
-        this.nextTurn(); // Start Game! Choose random player to start
+        this.endTurnBtn.classList.add('hide');
     }
 
     get currentPlayer() {
@@ -83,19 +86,18 @@ class Game {
     roll() {
         this.endTurnBtn.classList.remove('hide');
         this.rollDiceBtn.classList.add('hide');
-        let dice1 = random(6),
-            dice2 = random(6),
-            dice1El = document.getElementById('dice1').getElementsByClassName('number')[0],
-            dice2El = document.getElementById('dice2').getElementsByClassName('number')[0];
+        const dice1 = random(6);
+        const dice2 = random(6);
 
         let doubles = dice1 === dice2;
+        this.diceDoublesEl.classList.toggle('hide', !doubles);
 
         if (doubles) {
             this.doublesIterate();
         }
 
-        dice1El.classList = 'number roll-' + dice1;
-        dice2El.classList = 'number roll-' + dice2;
+        this.dice1El.classList = 'number roll-' + dice1;
+        this.dice2El.classList = 'number roll-' + dice2;
 
         this.lastRoll = {
             dice1: dice1,

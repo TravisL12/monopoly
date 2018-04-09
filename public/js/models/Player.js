@@ -11,6 +11,11 @@ class Player {
     const nextIndex = this.tileIndex + roll;
 
     // Pass Go! logic
-    this.tileIndex = nextIndex > 39 ? nextIndex - 40 : nextIndex;
+    if (nextIndex >= 40) {
+      this.money += 200;
+      this.tileIndex = nextIndex - 40;
+    } else {
+      this.tileIndex = nextIndex;
+    }
   }
 }

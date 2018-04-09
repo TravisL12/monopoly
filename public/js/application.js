@@ -1,4 +1,4 @@
-var tileData = {
+const tileData = {
     corners: [
         new Corner({ id: 'go' }),
         new Corner({ id: 'jail' }),
@@ -45,7 +45,7 @@ var tileData = {
             new Property({ name: 'North Carolina Avenue', cost: 300, color: 'Green' }),
             new Community({ name: 'Community Chest' }),
             new Property({ name: 'Pennsylvania Avenue', cost: 320, color: 'Green' }),
-            new Utility({ name: 'Short Line', cost: 200 }),
+            new Railroad({ name: 'Short Line', cost: 200 }),
             new Chance({ name: 'Chance' }),
             new Property({ name: 'Park Place', cost: 350, color: 'Blue' }),
             new Tax({ name: 'Luxury Tax', tax: 200 }),

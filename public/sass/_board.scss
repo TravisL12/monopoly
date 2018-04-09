@@ -6,7 +6,7 @@
         width:  $board-dimensions;
         border: 1px solid;
         position: relative;
-        background: #CDE6D0;
+        background: $monopoly-green;
 
         .side {
             position: absolute;
