@@ -6,7 +6,6 @@ class Game {
         this.board.render(this.el);
         this.playerTurn = 1;
         this.doublesCount = 0;
-        this.players = [];
 
         this.endTurnBtn = document.querySelector('#end-turn button');
         this.rollDiceBtn = document.querySelector('#roll-dice button');
@@ -25,11 +24,12 @@ class Game {
         const name = ['Travis', 'Marisa', 'Connor', 'Oliver'];
         const gamePiece = ['Dog', 'Car', 'Boat', 'Shoe'];
 
-        for (let i = 0; i < playerCount; i++) {
-            const player = new Player(name[i], gamePiece[i]);
-            this.players.push(player);
-            this.board.tiles[player.tileIndex].togglePlayer(i + 1);
-        }
+        this.players = name.reduce((players, name, i) => {
+            const player = new Player(name, gamePiece[i]);
+            players.push(player);
+            this.board.tiles[player.tileIndex].togglePlayer(i + 1); // put player at Go! (start)
+            return players;
+        }, []);
 
         this.playerTurn = random(playerCount);
         this.currentPlayer.isCurrentPlayer = true;
@@ -73,6 +73,7 @@ class Game {
 
         // place on new tile
         this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
+        console.log(this.board.tiles[player.tileIndex]);
     }
 
     doublesIterate() {
@@ -84,12 +85,12 @@ class Game {
     }
 
     roll() {
-        this.endTurnBtn.classList.remove('hide');
-        this.rollDiceBtn.classList.add('hide');
         const dice1 = random(6);
         const dice2 = random(6);
+        const doubles = dice1 === dice2;
 
-        let doubles = dice1 === dice2;
+        this.endTurnBtn.classList.remove('hide');
+        this.rollDiceBtn.classList.add('hide');
         this.diceDoublesEl.classList.toggle('hide', !doubles);
 
         if (doubles) {
@@ -113,7 +114,8 @@ class Game {
             let player = this.players[i];
             playersEl += `<div class='player-stat ${player.isCurrentPlayer
                 ? 'current'
-                : ''}'>${player.name} - $${player.money}</div>`;
+                : ''}'><span class='player-${+i +
+                1}'></span>${player.name} - $${player.money}</div>`;
         }
         this.playerStatsEl.innerHTML = playersEl;
     }

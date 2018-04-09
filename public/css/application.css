@@ -14,6 +14,27 @@ li {
 .hide {
   display: none !important; }
 
+.player-1,
+.player-2,
+.player-3,
+.player-4 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: none; }
+
+.player-1 {
+  background-color: red; }
+
+.player-2 {
+  background-color: gold; }
+
+.player-3 {
+  background-color: violet; }
+
+.player-4 {
+  background-color: purple; }
+
 .control-container .dice-container .dice {
   background: #f9f9f9;
   border-radius: 0.5rem;
@@ -91,21 +112,8 @@ li {
         display: flex;
         align-items: center;
         justify-content: space-around; }
-        .monopoly-container .game-board-container .tile .players .player-1,
-        .monopoly-container .game-board-container .tile .players .player-2,
-        .monopoly-container .game-board-container .tile .players .player-3,
-        .monopoly-container .game-board-container .tile .players .player-4 {
-          width: 15px;
-          height: 15px;
-          border-radius: 50%; }
-        .monopoly-container .game-board-container .tile .players .player-1.active {
-          background-color: red; }
-        .monopoly-container .game-board-container .tile .players .player-2.active {
-          background-color: gold; }
-        .monopoly-container .game-board-container .tile .players .player-3.active {
-          background-color: violet; }
-        .monopoly-container .game-board-container .tile .players .player-4.active {
-          background-color: purple; }
+        .monopoly-container .game-board-container .tile .players .active {
+          display: block; }
     .monopoly-container .game-board-container .tile.corner {
       position: absolute;
       height: 12.987012987rem;
@@ -218,6 +226,12 @@ li {
       background: white; }
   .control-container .player-stats-container {
     padding: 1rem; }
+    .control-container .player-stats-container .player-stat .player-1,
+    .control-container .player-stats-container .player-stat .player-2,
+    .control-container .player-stats-container .player-stat .player-3,
+    .control-container .player-stats-container .player-stat .player-4 {
+      display: inline-block;
+      margin-right: 10px; }
     .control-container .player-stats-container .player-stat.current {
       font-weight: bold; }
 

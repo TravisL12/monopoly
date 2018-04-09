@@ -56,6 +56,13 @@
     .player-stats-container {
         padding: 1rem;
         .player-stat {
+            .player-1,
+            .player-2,
+            .player-3,
+            .player-4 {
+                display: inline-block;
+                margin-right: 10px;
+            }
             &.current {
                 font-weight: bold;
             }

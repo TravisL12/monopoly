@@ -28,6 +28,29 @@ li {
   display: none !important;
 }
 
+.player-1,
+.player-2,
+.player-3,
+.player-4 {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: none;
+}
+
+.player-1 {
+    background-color: red;
+}
+.player-2 {
+    background-color: gold;
+}
+.player-3 {
+    background-color: violet;
+}
+.player-4 {
+    background-color: purple;
+}
+
 @import 'dice';
 @import 'board';
 @import 'game-controls';
