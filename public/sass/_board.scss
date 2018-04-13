@@ -1,6 +1,7 @@
 .monopoly-container {
     display: inline-block;
     margin-right: 1rem;
+
     .game-board-container {
         height: $board-dimensions;
         width:  $board-dimensions;
@@ -113,15 +114,6 @@
                 height: 20%;
                 width: 100%;
                 border-bottom: 2px solid;
-
-                &.lightblue { background: lightblue; }
-                &.brown     { background: brown;     }
-                &.orange    { background: orange;    }
-                &.purple    { background: purple;    }
-                &.red       { background: red;       }
-                &.yellow    { background: yellow;    }
-                &.blue      { background: blue;      }
-                &.green     { background: green;     }
             }
         }
 
@@ -145,7 +137,7 @@
             background-size: 7rem;
         }
 
-        .tile.tax       { background: purple; }
+        .tile.tax       { background: lightgray; }
         .tile.utility   { background: gray; }
     }
 

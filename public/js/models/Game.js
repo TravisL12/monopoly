@@ -2,6 +2,7 @@ class Game {
     constructor(elementId, tiles) {
         this.el = document.getElementById(elementId);
         this.playerStatsEl = document.getElementById('player-stats');
+        this.gameTileEl = document.getElementById('game-tile');
         this.board = new Board(tiles);
         this.board.render(this.el);
         this.playerTurn = 1;
@@ -33,7 +34,7 @@ class Game {
 
         this.playerTurn = random(playerCount);
         this.currentPlayer.isCurrentPlayer = true;
-        this.updateGameStats();
+        this.updatePlayerStats();
         this.endTurnBtn.classList.add('hide');
     }
 
@@ -60,7 +61,7 @@ class Game {
         }
 
         this.currentPlayer.isCurrentPlayer = true;
-        this.updateGameStats();
+        this.updatePlayerStats();
     }
 
     nextTurn() {
@@ -73,7 +74,7 @@ class Game {
 
         // place on new tile
         this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
-        console.log(this.board.tiles[player.tileIndex]);
+        this.updateGameTile(this.board.tiles[player.tileIndex]);
     }
 
     doublesIterate() {
@@ -108,7 +109,7 @@ class Game {
         };
     }
 
-    updateGameStats() {
+    updatePlayerStats() {
         let playersEl = '';
         for (let i in this.players) {
             let player = this.players[i];
@@ -118,5 +119,9 @@ class Game {
                 1}'></span>${player.name} - $${player.money}</div>`;
         }
         this.playerStatsEl.innerHTML = playersEl;
+    }
+
+    updateGameTile(currentTile) {
+        this.gameTileEl.innerHTML = currentTile.titleCard();
     }
 }

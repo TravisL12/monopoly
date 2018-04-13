@@ -1,3 +1,27 @@
+.lightblue {
+  background: lightblue; }
+
+.brown {
+  background: brown; }
+
+.orange {
+  background: orange; }
+
+.purple {
+  background: purple; }
+
+.red {
+  background: red; }
+
+.yellow {
+  background: yellow; }
+
+.blue {
+  background: blue; }
+
+.green {
+  background: green; }
+
 @font-face {
   font-family: "Kabel";
   src: url("/public/fonts/kabel.ttf"); }
@@ -147,22 +171,6 @@ li {
       height: 20%;
       width: 100%;
       border-bottom: 2px solid; }
-      .monopoly-container .game-board-container .tile.property .property-color.lightblue {
-        background: lightblue; }
-      .monopoly-container .game-board-container .tile.property .property-color.brown {
-        background: brown; }
-      .monopoly-container .game-board-container .tile.property .property-color.orange {
-        background: orange; }
-      .monopoly-container .game-board-container .tile.property .property-color.purple {
-        background: purple; }
-      .monopoly-container .game-board-container .tile.property .property-color.red {
-        background: red; }
-      .monopoly-container .game-board-container .tile.property .property-color.yellow {
-        background: yellow; }
-      .monopoly-container .game-board-container .tile.property .property-color.blue {
-        background: blue; }
-      .monopoly-container .game-board-container .tile.property .property-color.green {
-        background: green; }
     .monopoly-container .game-board-container .cost {
       position: absolute;
       bottom: 5px;
@@ -178,7 +186,7 @@ li {
       background: url("/public/images/Train.gif") 10% 60% no-repeat;
       background-size: 7rem; }
     .monopoly-container .game-board-container .tile.tax {
-      background: purple; }
+      background: lightgray; }
     .monopoly-container .game-board-container .tile.utility {
       background: gray; }
 
@@ -234,5 +242,19 @@ li {
       margin-right: 10px; }
     .control-container .player-stats-container .player-stat.current {
       font-weight: bold; }
+  .control-container .game-tile-container {
+    padding: 1rem; }
+
+.title-card {
+  border: 1px solid black;
+  padding: 1rem; }
+  .title-card .name {
+    padding: 1rem;
+    border: 2px solid;
+    text-align: center; }
+  .title-card .railroad .name {
+    border-left: none;
+    border-right: none;
+    padding: 0.5rem 0; }
 
 /*# sourceMappingURL=application.css.map */

@@ -2,7 +2,9 @@ class Tile {
     constructor(params) {
         this.name = params.name;
         this.type = params.type;
-        this.occupied = [];
+        this.owner = params.owner || null;
+        this.rent = params.rent;
+        this.houseCost = params.houseCost;
         if (params.cost) {
             this.cost = params.cost;
         }
@@ -11,6 +13,14 @@ class Tile {
     togglePlayer(playerNumber) {
         const playersEl = this.el.querySelector(`.players .player-${playerNumber}`);
         playersEl.classList.toggle(`active`);
+    }
+
+    titleCard() {
+        return `
+            <div class='title-card'>
+                <div class='name'>${this.name}</div>
+            </div>
+        `;
     }
 
     render() {
@@ -66,6 +76,26 @@ class Property extends Tile {
         this.cost = params.cost;
         this.color = params.color;
     }
+    titleCard() {
+        return `
+            <div class='title-card'>
+                <div class='name ${this.color}'>${this.name}</div>
+                <div class='property'>
+                    <p class='rent'>Rent $${this.rent[0]}</p>
+                    <ul class='house-rent'>
+                        <li>With 1 House $${this.rent[1]}</li>
+                        <li>With 2 Houses $${this.rent[2]}</li>
+                        <li>With 3 Houses $${this.rent[3]}</li>
+                        <li>With 4 Houses $${this.rent[4]}</li>
+                    </ul>
+                    <p class='hotel-rent'>With HOTEL $${this.rent[5]}</p>
+                    <p class='mortgage-value'>Mortgage Value $${this.cost / 2}</p>
+                    <p class='house-cost'>Houses cost $${this.houseCost}</p>
+                    <p class='hotel-cost'>Hotels $${this.houseCost}</p>
+                </div>
+            </div>
+        `;
+    }
 }
 class Community extends Tile {
     constructor(params) {
@@ -90,6 +120,25 @@ class Railroad extends Tile {
     constructor(params) {
         super(params);
         this.type = 'railroad';
+    }
+    titleCard() {
+        return `
+            <div class='title-card'>
+                <div class='railroad'>
+                    <div class='train-img'><img src='/public/images/Train.gif'/></div>
+                    <div class='name'>${this.name}</div>
+                    <div class='rent'>
+                        <ul class='house-rent'>
+                            <li>Rent $${this.cost}</li>
+                            <li>If 1 R.R's are owned $${this.cost * 2}</li>
+                            <li>If 2 "" "" "" $${this.cost * 2 * 2}</li>
+                            <li>If 3 "" "" "" $${this.cost * 2 * 2 * 2}</li>
+                        </ul>
+                    </div>
+                    <p class='mortgage-value'>Mortgage Value $${this.cost / 2}</p>
+                </div>
+            </div>
+        `;
     }
 }
 class Chance extends Tile {

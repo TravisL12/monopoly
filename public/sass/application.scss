@@ -6,6 +6,14 @@ $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
 
 // colors
 $monopoly-green: #CDE6D0;
+.lightblue { background: lightblue; }
+.brown     { background: brown;     }
+.orange    { background: orange;    }
+.purple    { background: purple;    }
+.red       { background: red;       }
+.yellow    { background: yellow;    }
+.blue      { background: blue;      }
+.green     { background: green;     }
 
 // Reset stuff
 @font-face {
@@ -32,25 +40,26 @@ li {
 .player-2,
 .player-3,
 .player-4 {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    display: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: none;
 }
 
 .player-1 {
-    background-color: red;
+  background-color: red;
 }
 .player-2 {
-    background-color: gold;
+  background-color: gold;
 }
 .player-3 {
-    background-color: violet;
+  background-color: violet;
 }
 .player-4 {
-    background-color: purple;
+  background-color: purple;
 }
 
 @import 'dice';
 @import 'board';
 @import 'game-controls';
+@import 'title-card';
