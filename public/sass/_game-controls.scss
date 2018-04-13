@@ -1,0 +1,74 @@
+.control-container {
+    display: inline-block;
+    font-family: 'Helvetica Neue';
+    font-size: 1.8rem;
+    min-width: 35rem;
+    max-width: 70rem;
+    margin-right: 1rem;
+    height: $board-dimensions;
+    vertical-align: top;
+    border: 1px solid;
+
+    .dice-container {
+        position: relative;
+        width: 100%;
+        height: 10rem;
+        background: #ddd;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        .dice {
+            @extend %dice;
+        }
+        .doubles {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Times;
+            font-weight: 700;
+            font-style: italic;
+            color: lime;
+        }
+    }
+
+    .game-buttons {
+        text-align: center;
+        button {
+            border: 1px solid black;
+            border-radius: 0;
+            padding: 10px 0;
+            font-size: 18px;
+            text-align: center;
+            width: 150px;
+            box-sizing: border-box;
+        }
+        #end-turn button {
+            background: red;
+        }
+        #roll-dice button {
+            background: white;
+        }
+    }
+
+    .player-stats-container {
+        padding: 1rem;
+        .player-stat {
+            .player-1,
+            .player-2,
+            .player-3,
+            .player-4 {
+                display: inline-block;
+                margin-right: 10px;
+            }
+            &.current {
+                font-weight: bold;
+            }
+        }
+    }
+    .game-tile-container {
+        padding: 1rem;
+    }
+}

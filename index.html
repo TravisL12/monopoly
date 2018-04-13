@@ -9,12 +9,30 @@
 
   <body>
     <div id='game' class='monopoly-container'></div>
+
+    <div id='game-panel' class='control-container'>
+
+      <div class='dice-container'>
+        <div id='dice1' class='dice'><div class='number roll-5'></div></div>
+        <div id='dice2' class='dice'><div class='number roll-5'></div></div>
+        <div class='doubles hide'>Doubles!</div>
+      </div>
+
+      <div class='game-buttons'>
+        <div id='end-turn'><button>End Turn</button></div>
+        <div id='roll-dice'><button>Roll!</button></div>
+      </div>
+
+      <div class='player-stats-container' id='player-stats'></div>
+      <div class='game-tile-container' id='game-tile'></div>
+
+    </div>
+
   </body>
 
   <script src="public/js/models/Board.js"></script>
-  <script src="public/js/models/Tiles.js"></script>
+  <script src="public/js/models/Tile.js"></script>
   <script src="public/js/models/Player.js"></script>
-  <script src="public/js/tileData.js"></script>
   <script src="public/js/models/Game.js"></script>
   <script src="public/js/application.js"></script>
 

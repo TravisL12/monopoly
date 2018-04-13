@@ -1,0 +1,25 @@
+.title-card {
+  border: 1px solid black;
+  padding: 1rem;
+  .name {
+    padding: 1rem;
+    border: 2px solid;
+      text-align: center;
+  }
+
+  .property {
+    .rent {
+
+    }
+    .house-rent {
+
+    }
+  }
+  .railroad {
+    .name {
+      border-left: none;
+      border-right: none;
+      padding: 0.5rem 0;
+    }
+  }
+}

@@ -1,19 +1,65 @@
+// Variables
+$board-dimensions: 100rem;
+$corner-dimensions: $board-dimensions/7.7;
+$tile-height: $corner-dimensions;
+$tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
+
+// colors
+$monopoly-green: #CDE6D0;
+.lightblue { background: lightblue; }
+.brown     { background: brown;     }
+.orange    { background: orange;    }
+.purple    { background: purple;    }
+.red       { background: red;       }
+.yellow    { background: yellow;    }
+.blue      { background: blue;      }
+.green     { background: green;     }
+
+// Reset stuff
 @font-face {
-    font-family:"Kabel";
-    src: url("/public/fonts/kabel.ttf");
+  font-family:"Kabel";
+  src: url("/public/fonts/kabel.ttf");
 }
 
 html { font-size: 10px; }
 
 ul {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
-.monopoly-container {
-    @import 'board';
+.hide {
+  display: none !important;
 }
+
+.player-1,
+.player-2,
+.player-3,
+.player-4 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: none;
+}
+
+.player-1 {
+  background-color: red;
+}
+.player-2 {
+  background-color: gold;
+}
+.player-3 {
+  background-color: violet;
+}
+.player-4 {
+  background-color: purple;
+}
+
+@import 'dice';
+@import 'board';
+@import 'game-controls';
+@import 'title-card';
