@@ -79,6 +79,9 @@
             width: $corner-dimensions;
             background: red;
             border: 1px solid;
+            .name {
+                display: none;
+            }
         }
 
         #go.tile.corner {

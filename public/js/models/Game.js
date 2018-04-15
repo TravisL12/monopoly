@@ -22,7 +22,7 @@ class Game {
 
     initialize() {
         const playerCount = 4;
-        const name = ['Travis', 'Marisa', 'Connor', 'Oliver'];
+        const name = ['Travis', 'Marisa', 'Connor', 'Harper'];
         const gamePiece = ['Dog', 'Car', 'Boat', 'Shoe'];
 
         this.players = name.reduce((players, name, i) => {

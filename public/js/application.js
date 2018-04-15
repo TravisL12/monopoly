@@ -2,10 +2,10 @@ const bank = new Player('Bank', 'bank');
 
 const tileData = {
     corners: [
-        new Corner({ id: 'go', name: 'go' }),
-        new Corner({ id: 'jail', name: 'jail' }),
-        new Corner({ id: 'parking', name: 'parking' }),
-        new Corner({ id: 'go-to-jail', name: 'go-to-jail' }),
+        new Corner({ id: 'go', name: 'Go' }),
+        new Corner({ id: 'jail', name: 'Jail' }),
+        new Corner({ id: 'parking', name: 'Parking' }),
+        new Corner({ id: 'go-to-jail', name: 'Go to jail' }),
     ],
 
     sides: [
@@ -13,7 +13,7 @@ const tileData = {
             new Property({
                 name: 'Mediter-ranean Avenue',
                 cost: 60,
-                color: 'brown',
+                color: 'violet',
                 owner: bank,
                 rent: [2, 10, 30, 90, 160, 250],
                 houseCost: 50,
@@ -22,7 +22,7 @@ const tileData = {
             new Property({
                 name: 'Baltic Avenue',
                 cost: 60,
-                color: 'brown',
+                color: 'violet',
                 owner: bank,
                 rent: [4, 20, 60, 180, 320, 450],
                 houseCost: 50,
