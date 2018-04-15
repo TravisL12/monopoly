@@ -18,7 +18,9 @@ class Tile {
     titleCard() {
         return `
             <div class='title-card'>
-                <div class='name'>${this.name}</div>
+                <div class='inner-card'>
+                    <div class='name'>${this.name}</div>
+                </div>
             </div>
         `;
     }
@@ -79,19 +81,24 @@ class Property extends Tile {
     titleCard() {
         return `
             <div class='title-card'>
-                <div class='name ${this.color}'>${this.name}</div>
-                <div class='property'>
-                    <p class='rent'>Rent $${this.rent[0]}</p>
-                    <ul class='house-rent'>
-                        <li>With 1 House $${this.rent[1]}</li>
-                        <li>With 2 Houses $${this.rent[2]}</li>
-                        <li>With 3 Houses $${this.rent[3]}</li>
-                        <li>With 4 Houses $${this.rent[4]}</li>
-                    </ul>
-                    <p class='hotel-rent'>With HOTEL $${this.rent[5]}</p>
-                    <p class='mortgage-value'>Mortgage Value $${this.cost / 2}</p>
-                    <p class='house-cost'>Houses cost $${this.houseCost}</p>
-                    <p class='hotel-cost'>Hotels $${this.houseCost}</p>
+                <div class='inner-card'>
+                    <div class='name ${this.color}'>
+                        <p class='title-deed'>TITLE DEED</p>
+                        <p>${this.name}</p>
+                    </div>
+                    <div class='property'>
+                        <p class='rent'>Rent $${this.rent[0]}</p>
+                        <ul class='house-rent'>
+                            <li>With 1 House <span>$${this.rent[1]}</span></li>
+                            <li>With 2 Houses <span>${this.rent[2]}</span></li>
+                            <li>With 3 Houses <span>${this.rent[3]}</span></li>
+                            <li>With 4 Houses <span>${this.rent[4]}</span></li>
+                        </ul>
+                        <p class='hotel-rent'>With HOTEL $${this.rent[5]}</p>
+                        <p class='mortgage-value'>Mortgage Value $${this.cost / 2}</p>
+                        <p class='house-cost'>Houses cost $${this.houseCost}. each</p>
+                        <p class='hotel-cost'>Hotels $${this.houseCost}. plus 4 houses</p>
+                    </div>
                 </div>
             </div>
         `;
@@ -124,18 +131,20 @@ class Railroad extends Tile {
     titleCard() {
         return `
             <div class='title-card'>
-                <div class='railroad'>
-                    <div class='train-img'><img src='/public/images/Train.gif'/></div>
-                    <div class='name'>${this.name}</div>
-                    <div class='rent'>
-                        <ul class='house-rent'>
-                            <li>Rent $${this.cost}</li>
-                            <li>If 1 R.R's are owned $${this.cost * 2}</li>
-                            <li>If 2 "" "" "" $${this.cost * 2 * 2}</li>
-                            <li>If 3 "" "" "" $${this.cost * 2 * 2 * 2}</li>
-                        </ul>
+                <div class='inner-card'>
+                    <div class='railroad'>
+                        <div class='train-img'><img src='/public/images/Train.gif'/></div>
+                        <div class='name'>${this.name}</div>
+                        <div class='rent'>
+                            <ul class='house-rent'>
+                                <li>Rent $${this.cost}</li>
+                                <li>If 1 R.R's are owned $${this.cost * 2}</li>
+                                <li>If 2 "" "" "" $${this.cost * 2 * 2}</li>
+                                <li>If 3 "" "" "" $${this.cost * 2 * 2 * 2}</li>
+                            </ul>
+                        </div>
+                        <p class='mortgage-value'>Mortgage Value $${this.cost / 2}</p>
                     </div>
-                    <p class='mortgage-value'>Mortgage Value $${this.cost / 2}</p>
                 </div>
             </div>
         `;
