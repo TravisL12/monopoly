@@ -87,28 +87,28 @@
         #go.tile.corner {
             bottom: 0;
             left: 0;
-            background: url('/public/images/go.gif') center 75% no-repeat;
+            background: url('public/images/go.gif') center 75% no-repeat;
             background-size: contain;
             transform: rotate(90deg);
         }
         #jail.tile.corner {
             top: 0;
             left: 0;
-            background: url("/public/images/in-jail.jpg") 110% -10% no-repeat;
+            background: url("public/images/in-jail.jpg") 110% -10% no-repeat;
             background-size: 10rem;
             transform: rotate(90deg);
         }
         #parking.tile.corner {
             top: 0;
             right: 0;
-            background: url('/public/images/free-parking.png') center 75% no-repeat;
+            background: url('public/images/free-parking.png') center 75% no-repeat;
             background-size: contain;
             transform: rotate(-90deg);
         }
         #go-to-jail.tile.corner {
             bottom: 0;
             right: 0;
-            background: url('/public/images/go-to-jail.png') center 75% no-repeat;
+            background: url('public/images/go-to-jail.png') center 75% no-repeat;
             background-size: contain;
         }
 
@@ -128,15 +128,15 @@
         }
 
         .tile.community {
-            background: url('/public/images/community_chest.gif') center 75% no-repeat;
+            background: url('public/images/community_chest.gif') center 75% no-repeat;
             background-size: contain;
         }
         .tile.chance    {
-            background: url('/public/images/chance.png') center 75% no-repeat;
+            background: url('public/images/chance.png') center 75% no-repeat;
             background-size: 5rem;
         }
         .tile.railroad    {
-            background: url('/public/images/Train.gif') 10% 60% no-repeat;
+            background: url('public/images/Train.gif') 10% 60% no-repeat;
             background-size: 7rem;
         }
 
