@@ -133,7 +133,7 @@ class Railroad extends Tile {
             <div class='title-card'>
                 <div class='inner-card'>
                     <div class='railroad'>
-                        <div class='train-img'><img src='/public/images/Train.gif'/></div>
+                        <div class='train-img'><img src='/images/Train.gif'/></div>
                         <div class='name'>${this.name}</div>
                         <div class='rent'>
                             <ul class='house-rent'>
@@ -156,3 +156,5 @@ class Chance extends Tile {
         this.type = 'chance';
     }
 }
+
+export { Tile, Corner, Property, Community, Tax, Utility, Railroad, Chance };

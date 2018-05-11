@@ -36,3 +36,5 @@ class Board {
         element.appendChild(tileContainerElement);
     }
 }
+
+export default Board;

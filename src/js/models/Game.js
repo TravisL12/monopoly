@@ -1,3 +1,7 @@
+import Board from "./Board";
+import Player from "./Player";
+import { random } from '../utilities';
+
 class Game {
     constructor(elementId, tiles) {
         this.el = document.getElementById(elementId);
@@ -125,3 +129,5 @@ class Game {
         this.gameTileEl.innerHTML = currentTile.titleCard();
     }
 }
+
+export default Game;

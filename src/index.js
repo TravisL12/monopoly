@@ -1,3 +1,9 @@
+import { Tile, Corner, Property, Community, Tax, Utility, Railroad, Chance } from "./js/models/Tile";
+import Player from "./js/models/Player";
+import Game from "./js/models/Game";
+
+import './sass/application.scss';
+
 const bank = new Player('Bank', 'bank');
 
 const tileData = {
@@ -209,10 +215,5 @@ const tileData = {
         ],
     ],
 };
-
-function random(max, min) {
-    min = min || 0;
-    return Math.ceil(Math.random() * max + min);
-}
 
 const game = new Game('game', tileData);
