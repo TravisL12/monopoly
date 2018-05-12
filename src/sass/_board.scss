@@ -1,6 +1,8 @@
 .monopoly-container {
     display: inline-block;
     margin-right: 1rem;
+    perspective: 800px;
+    overflow: hidden;
 
     .game-board-container {
         height: $board-dimensions;
@@ -8,6 +10,31 @@
         border: 1px solid;
         position: relative;
         background: $monopoly-green;
+        transition: 1s linear transform;
+
+        &.bottom-left,
+        &.bottom-right,
+        &.top-left,
+        &.top-right {
+            transform-style: preserve-3d;
+            transform: scale(1.75);
+        }
+
+        &.bottom-left {
+            transform-origin: left bottom;
+        }
+
+        &.bottom-right {
+            transform-origin: right bottom;
+        }
+
+        &.top-left {
+            transform-origin: left top;
+        }
+
+        &.top-right {
+            transform-origin: right top;
+        }
 
         .side {
             position: absolute;

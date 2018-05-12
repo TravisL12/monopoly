@@ -1,5 +1,5 @@
 // Variables
-$board-dimensions: 100rem;
+$board-dimensions: 90rem;
 $corner-dimensions: $board-dimensions/7.7;
 $tile-height: $corner-dimensions;
 $tile-width: ($board-dimensions - (2 * $corner-dimensions)) / 9;
@@ -23,6 +23,11 @@ $monopoly-green: #CDE6D0;
 
 html { font-size: 10px; }
 
+body {
+  margin: 0;
+}
+
+
 ul {
   padding: 0;
   margin: 0;
@@ -30,6 +35,10 @@ ul {
 
 li {
   list-style: none;
+}
+
+.game-container {
+  margin: 0 10rem;
 }
 
 .hide {
@@ -58,6 +67,7 @@ li {
 .player-4 {
   background-color: purple;
 }
+
 
 @import 'dice';
 @import 'board';
