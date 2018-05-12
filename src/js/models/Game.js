@@ -79,7 +79,8 @@ class Game {
 
         // place on new tile
         this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
-        this.board.zoomIn('bottom','right');
+        this.board.determineZoomLocation(player.tileIndex);
+
         this.updateGameTile(this.board.tiles[player.tileIndex]);
     }
 
