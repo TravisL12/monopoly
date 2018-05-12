@@ -59,6 +59,7 @@ class Game {
         this.rollDiceBtn.classList.toggle('hide');
         this.doublesCount = 0;
         this.currentPlayer.isCurrentPlayer = false;
+        this.board.resetZoom();
 
         if (!this.lastRoll.isDoubles) {
             this.getNextPlayer();
@@ -78,6 +79,7 @@ class Game {
 
         // place on new tile
         this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
+        this.board.zoomIn('bottom','right');
         this.updateGameTile(this.board.tiles[player.tileIndex]);
     }
 

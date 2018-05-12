@@ -14,12 +14,22 @@ class Board {
         return spaces;
     }
 
-    render(element) {
-        var tileContainerElement = document.createElement('div');
-        tileContainerElement.className = 'game-board-container';
+    zoomIn(x, y) {
+        this.el.style.transform = 'scale(1.75)';
+        this.el.style['transform-origin'] = `${x} ${y}`;
+    }
 
-        this.tileData.corners.forEach(function(tile) {
-            tileContainerElement.appendChild(tile.render());
+    resetZoom() {
+        this.el.style.transform = 'scale(1)';
+        this.el.className = 'game-board-container';
+    }
+
+    render(element) {
+        this.el = document.createElement('div');
+        this.resetZoom();
+
+        this.tileData.corners.forEach((tile) => {
+            this.el.appendChild(tile.render());
         });
 
         for (var i in this.tileData.sides) {
@@ -30,10 +40,10 @@ class Board {
             for (var j in side) {
                 sideElement.appendChild(side[j].render());
             }
-            tileContainerElement.appendChild(sideElement);
+            this.el.appendChild(sideElement);
         }
 
-        element.appendChild(tileContainerElement);
+        element.appendChild(this.el);
     }
 }
 
