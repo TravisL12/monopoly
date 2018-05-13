@@ -71,17 +71,16 @@ class Game {
 
     nextTurn() {
         this.roll();
-        const player = this.players[this.playerTurn - 1];
 
         // remove from current tile
-        this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
-        player.update(this.lastRoll.total);
+        this.board.tiles[this.currentPlayer.tileIndex].togglePlayer(this.playerTurn);
+        this.currentPlayer.update(this.lastRoll.total);
 
         // place on new tile
-        this.board.tiles[player.tileIndex].togglePlayer(this.playerTurn);
-        this.board.determineZoomLocation(player.tileIndex);
+        this.board.tiles[this.currentPlayer.tileIndex].togglePlayer(this.playerTurn);
+        this.board.determineZoomLocation(this.currentPlayer.tileIndex);
 
-        this.updateGameTile(this.board.tiles[player.tileIndex]);
+        this.updateGameTile(this.board.tiles[this.currentPlayer.tileIndex]);
     }
 
     doublesIterate() {
