@@ -5,6 +5,7 @@ class Player {
     this.gamePiece = gamePiece;
     this.money = 1000;
     this.isCurrentPlayer = false;
+    this.isInJail = false;
   }
 
   update(roll = 0) {
