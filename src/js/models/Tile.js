@@ -15,6 +15,10 @@ class Tile {
         playersEl.classList.toggle(`active`);
     }
 
+    buyTile(owner) {
+        this.owner = owner;
+    }
+
     titleCard() {
         return `
             <div class='title-card'>

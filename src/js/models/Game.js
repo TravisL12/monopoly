@@ -1,5 +1,6 @@
 import Board from "./Board";
 import Player from "./Player";
+import Dice from "./Dice";
 import { $, random } from '../utilities';
 
 class Game {
@@ -10,13 +11,13 @@ class Game {
         this.board = new Board(tiles);
         this.board.render(this.el);
         this.playerTurn = 1;
-        this.doublesCount = 0;
+        this.dice = new Dice();
 
         this.endTurnBtn = $('#end-turn button');
         this.rollDiceBtn = $('#roll-dice button');
-        this.dice1El = document.getElementById('dice1').firstChild;
-        this.dice2El = document.getElementById('dice2').firstChild;
-        this.diceDoublesEl = $('.dice-container .doubles');
+
+        this.buyBtn = $('#buy-property button');
+        this.payRentBtn = $('#pay-rent button');
 
         this.endTurnBtn.addEventListener('click', this.endTurn.bind(this));
         this.rollDiceBtn.addEventListener('click', this.takeTurn.bind(this));
@@ -61,7 +62,7 @@ class Game {
     movePlayerToTile() {
         // remove from current tile
         this.board.tiles[this.currentPlayer.tileIndex].togglePlayer(this.playerTurn);
-        this.currentPlayer.update(this.lastRoll.total);
+        this.currentPlayer.update(this.dice.lastRoll.total);
 
         // place on new tile
         this.board.tiles[this.currentPlayer.tileIndex].togglePlayer(this.playerTurn);
@@ -72,73 +73,62 @@ class Game {
     }
 
     endTurn() {
-        this.endTurnBtn.classList.toggle('hide');
-        this.rollDiceBtn.classList.toggle('hide');
-        this.doublesCount = 0;
-        this.board.resetZoom();
-
-        if (!this.lastRoll.isDoubles) {
+        if (!this.dice.lastRoll.isDoubles) {
+            this.endTurnBtn.classList.toggle('hide');
+            this.rollDiceBtn.classList.toggle('hide');
             this.getNextPlayer();
+            this.dice.doublesCount = 0;
+            this.board.resetZoom();
         }
 
         this.updatePlayerStats();
     }
 
+    goToJail() {
+      window.alert('player goes to jail');
+      this.board.tiles[this.currentPlayer.tileIndex].togglePlayer(this.playerTurn);
+      this.currentPlayer.tileIndex = 10;
+      this.board.tiles[this.currentPlayer.tileIndex].togglePlayer(this.playerTurn);
+
+      this.currentPlayer.isInJail = true;
+      this.dice.doublesCount = 0;
+      this.endTurn();
+    }
+
     takeTurn() {
-        this.roll();
+        this.dice.roll();
+
+        if (!this.dice.lastRoll.isDoubles) {
+            this.endTurnBtn.classList.remove('hide');
+            this.rollDiceBtn.classList.add('hide');
+        } else {
+            this.currentPlayer.isInJail = false;
+        }
+
+        const landedOnJail = this.dice.lastRoll.total + this.currentPlayer.tileIndex === 30;
+        const tripleDoubles = this.dice.lastRoll.doublesCount === 3;
+
+        if (landedOnJail || tripleDoubles) {
+            this.goToJail();
+        }
 
         if (this.currentPlayer.isInJail) {
-            console.alert(`You're still in jail!`);
+            window.alert(`You're still in jail!`);
         } else {
             this.movePlayerToTile();
+            this.buyBtn.classList.remove('hide');
+            this.payRentBtn.classList.add('hide');
         }
-    }
-
-    doublesIterate() {
-        if (this.doublesCount < 3) {
-            this.doublesCount += 1;
-        } else if (this.doublesCount === 3) {
-            window.alert('player goes to jail');
-            this.currentPlayer.tileIndex = 10;
-            this.currentPlayer.isInJail = true;
-            this.movePlayerToTile();
-            this.lastRoll.isDoubles = false;
-            this.endTurn();
-        }
-    }
-
-    roll() {
-        const dice1 = random(6);
-        const dice2 = random(6);
-        const isDoubles = dice1 === dice2;
-
-        this.endTurnBtn.classList.remove('hide');
-        this.rollDiceBtn.classList.add('hide');
-        this.diceDoublesEl.classList.toggle('hide', !isDoubles);
-
-        if (isDoubles) {
-            this.doublesIterate();
-        }
-
-        this.dice1El.classList = 'number roll-' + dice1;
-        this.dice2El.classList = 'number roll-' + dice2;
-
-        this.lastRoll = {
-            dice1: dice1,
-            dice2: dice2,
-            isDoubles: isDoubles,
-            total: dice1 + dice2,
-        };
     }
 
     updatePlayerStats() {
         let playersEl = '';
         for (let i in this.players) {
             let player = this.players[i];
-            playersEl += `<div class='player-stat ${player.isCurrentPlayer
-                ? 'current'
-                : ''}'><span class='player-${+i +
-                1}'></span>${player.name} - $${player.money}</div>`;
+            playersEl += `<div class='player-stat ${player.isCurrentPlayer ? 'current' : ''}'>
+                            <span class='player-${parseInt(i) + 1}'></span>
+                            ${player.name} - $${player.money}
+                        </div>`;
         }
         this.playerStatsEl.innerHTML = playersEl;
     }

@@ -1,5 +1,8 @@
 .control-container {
-    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(255,255,255,0.9);
     font-family: 'Helvetica Neue';
     font-size: 1.8rem;
     min-width: 35rem;
@@ -70,5 +73,6 @@
     }
     .game-tile-container {
         padding: 1rem;
+        background: white;
     }
 }

@@ -17,31 +17,28 @@ class Board {
     determineZoomLocation(index) {
         if (index <= 5 || index > 35) {
             this.zoomIn('bottom', 'left');
-            return;
-        }
-        if (index > 5 && index <= 15) {
-            this.zoomIn('top', 'left');
-            return;
-        }
-        if (index > 15 && index <= 25) {
-            this.zoomIn('top', 'right');
-            return;
-        }
-        if (index > 25 && index <= 35) {
-            this.zoomIn('bottom', 'right');
-            return;
         }
 
-        this.resetZoom();
+        if (index > 5 && index <= 15) {
+            this.zoomIn('top', 'left');
+        }
+
+        if (index > 15 && index <= 25) {
+            this.zoomIn('top', 'right');
+        }
+
+        if (index > 25 && index <= 35) {
+            this.zoomIn('bottom', 'right');
+        }
     }
 
     zoomIn(x, y) {
-        this.el.style.transform = 'scale(1.75)';
+        this.el.style.transform = 'scale3d(1.75, 1.75, 1.75)';
         this.el.style['transform-origin'] = `${x} ${y}`;
     }
 
     resetZoom() {
-        this.el.style.transform = 'scale(1)';
+        this.el.style.transform = 'scale3d(1, 1, 1)';
         this.el.className = 'game-board-container';
     }
 
